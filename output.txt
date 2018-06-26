@@ -1,0 +1,166 @@
+class example
+{
+	/* line 1: /* */
+	/* line 2: * Example with Functions */
+	/* line 3: */ */
+	/* line 4:  */
+	/* line 5: // variables */
+	field static boolean c = false
+	/* line 6: let mut c; */
+	field static int a = 5
+	/* line 7: let mut a = 5; */
+	/* line 8:  */
+	/* line 9: // function declaration */
+	method public static int add(int, int)
+	max_stack 15
+	max_locals 15
+	{
+		/* line 10: fn add(a:int, b:int) -> int { */
+		iload 0
+		sipush 1
+		iadd
+		istore 0
+		/* line 11:     { a = a + 1;  */
+		iload 0
+		iload 1
+		isub
+		ifeq L0
+		iconst_0
+		goto L1
+L0:
+		iconst_1
+L1:
+		ifeq L2
+		/* line 12:     if(a == b) { */
+		iload 1
+		ireturn
+		/* line 13:         return b; */
+		/* line 14:     } */
+L2:
+
+/*  ----------------------------------------------------------------------------  */
+/*  < Symbol Table >                                                              */
+/*  ----------------------------------------------------------------------------  */
+/*  name    field     value        kind        type       scope                   */
+/*  ----------------------------------------------------------------------------  */
+/*  a       local     local_0      variable    int        global -> function_add  */
+/*  b       local     local_1      variable    int        global -> function_add  */
+/*  c       global    example.c    variable    boolean    global                  */
+/*  a       global    example.a    variable    int        global                  */
+/*  add     global    X            function    int        global                  */
+/*  ----------------------------------------------------------------------------  */
+
+		/* line 15:     } */
+		iload 0
+		iload 1
+		iadd
+		ireturn
+		/* line 16:     return a+b; */
+	}
+
+/*  ----------------------------------------------------------------------------  */
+/*  < Symbol Table >                                                              */
+/*  ----------------------------------------------------------------------------  */
+/*  name    field     value        kind        type       scope                   */
+/*  ----------------------------------------------------------------------------  */
+/*  a       local     local_0      variable    int        global -> function_add  */
+/*  b       local     local_1      variable    int        global -> function_add  */
+/*  c       global    example.c    variable    boolean    global                  */
+/*  a       global    example.a    variable    int        global                  */
+/*  add     global    X            function    int        global                  */
+/*  ----------------------------------------------------------------------------  */
+
+	/* line 17: } */
+	/* line 18:  */
+	/* line 19: // main function */
+	method public static void main(java.lang.String[])
+	max_stack 15
+	max_locals 15
+	{
+		/* line 20: fn main() { */
+		getstatic int example.a
+		sipush 10
+		invokestatic int example.add(int, int)
+		putstatic boolean example.c
+		/* line 21:     c = add(a, 10); */
+		getstatic int example.c
+		sipush 10
+		isub
+		ifgt L3
+		iconst_0
+		goto L4
+L3:
+		iconst_1
+L4:
+		ifeq L5
+		/* line 22:     if (c > 10) { */
+		getstatic java.io.PrintStream java.lang.System.out
+		getstatic int example.c
+		ineg
+		invokevirtual void java.io.PrintStream.print(int)
+		/* line 23:         print -c; */
+		/* line 24:     } */
+		goto L6
+
+/*  ------------------------------------------------------------  */
+/*  < Symbol Table >                                              */
+/*  ------------------------------------------------------------  */
+/*  name    field     value        kind        type       scope   */
+/*  ------------------------------------------------------------  */
+/*  c       global    example.c    variable    boolean    global  */
+/*  a       global    example.a    variable    int        global  */
+/*  add     global    X            function    int        global  */
+/*  main    global    X            function    void       global  */
+/*  ------------------------------------------------------------  */
+
+L5:
+		/* line 25:     else { */
+		getstatic java.io.PrintStream java.lang.System.out
+		getstatic int example.c
+		invokevirtual void java.io.PrintStream.print(boolean)
+		/* line 26:         print c; */
+L6:
+
+/*  ------------------------------------------------------------  */
+/*  < Symbol Table >                                              */
+/*  ------------------------------------------------------------  */
+/*  name    field     value        kind        type       scope   */
+/*  ------------------------------------------------------------  */
+/*  c       global    example.c    variable    boolean    global  */
+/*  a       global    example.a    variable    int        global  */
+/*  add     global    X            function    int        global  */
+/*  main    global    X            function    void       global  */
+/*  ------------------------------------------------------------  */
+
+		/* line 27:     } */
+		getstatic java.io.PrintStream java.lang.System.out
+		ldc "Hello World"
+		invokevirtual void java.io.PrintStream.println(java.lang.String)
+		/* line 28:     println "Hello World"; */
+		return
+	}
+
+/*  ------------------------------------------------------------  */
+/*  < Symbol Table >                                              */
+/*  ------------------------------------------------------------  */
+/*  name    field     value        kind        type       scope   */
+/*  ------------------------------------------------------------  */
+/*  c       global    example.c    variable    boolean    global  */
+/*  a       global    example.a    variable    int        global  */
+/*  add     global    X            function    int        global  */
+/*  main    global    X            function    void       global  */
+/*  ------------------------------------------------------------  */
+
+
+/*  ------------------------------------------------------------  */
+/*  < Symbol Table >                                              */
+/*  ------------------------------------------------------------  */
+/*  name    field     value        kind        type       scope   */
+/*  ------------------------------------------------------------  */
+/*  c       global    example.c    variable    boolean    global  */
+/*  a       global    example.a    variable    int        global  */
+/*  add     global    X            function    int        global  */
+/*  main    global    X            function    void       global  */
+/*  ------------------------------------------------------------  */
+
+}
